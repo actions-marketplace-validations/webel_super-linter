@@ -4,7 +4,7 @@ author: "Cookie"
 description: "It is a simple combination of various linters, some support removed compared to Github's, and svelte added."
 runs:
   using: "docker"
-  image: "webel/super-linter:latest"
+  image: "docker://webel/super-linter:latest"
 branding:
   icon: "check-square"
   color: "white"
