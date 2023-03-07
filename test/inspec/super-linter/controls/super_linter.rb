@@ -278,6 +278,7 @@ control "super-linter-installed-npm-packages" do
     "eslint-plugin-json",
     "eslint-plugin-jsonc",
     "eslint-plugin-jsx-a11y",
+    "eslint-plugin-svelte",
     "eslint-plugin-prettier",
     "gherkin-lint",
     "htmlhint",
@@ -296,6 +297,7 @@ control "super-linter-installed-npm-packages" do
     "stylelint",
     "stylelint-config-sass-guidelines",
     "stylelint-config-standard",
+    "svelte-eslint-parser",
     #"stylelint-scss",
     "tekton-lint",
     "typescript"

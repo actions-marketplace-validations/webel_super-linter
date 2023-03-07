@@ -541,6 +541,15 @@ function BuildFileList() {
       ################################
       FILE_ARRAY_JSX+=("${FILE}")
 
+	    #####################
+    # Get the SVELTE files #
+    #####################
+    elif [ "${FILE_TYPE}" == "svelte" ]; then
+      ################################
+      # Append the file to the array #
+      ################################
+      FILE_ARRAY_SVELTE+=("${FILE}")
+
     ########################
     # Get the KOTLIN files #
     ########################
