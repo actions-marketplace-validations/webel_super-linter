@@ -8,4 +8,4 @@ pylint==2.15.10
 tomli==2.0.1
 tomlkit==0.11.6
 typing_extensions==4.4.0
-wrapt==1.14.1
+wrapt==1.15.0
