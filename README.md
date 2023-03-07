@@ -1,9 +1,15 @@
+# Edits
+
+The only change to the forked repo is added svelte support as well as removed support for... latex, kotlin and rust. Because of docker build issues.
+
+---
+
 # Super-Linter
 
 This repository is for the **GitHub Action** to run a **Super-Linter**.
 It is a simple combination of various linters, written in `bash`, to help validate your source code.
 
-[![Codacy Badge](https://app.codacy.com/project/badge/Grade/51071879604e4f319859d4daf91c68f5)](https://app.codacy.com/gh/github/super-linter/dashboard?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=github/super-linter&amp;utm_campaign=Badge_Grade)
+[![Codacy Badge](https://app.codacy.com/project/badge/Grade/51071879604e4f319859d4daf91c68f5)](https://app.codacy.com/gh/github/super-linter/dashboard?utm_source=github.com&utm_medium=referral&utm_content=github/super-linter&utm_campaign=Badge_Grade)
 
 **The end goal of this tool:**
 
@@ -52,7 +58,7 @@ The design of the **Super-Linter** is currently to allow linting to occur in **G
 Developers on **GitHub** can call the **GitHub Action** to lint their codebase with the following list of linters:
 
 | _Language_                       | _Linter_                                                                                                                                                                                                                |
-|----------------------------------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| -------------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | **Ansible**                      | [ansible-lint](https://github.com/ansible/ansible-lint)                                                                                                                                                                 |
 | **AWS CloudFormation templates** | [cfn-lint](https://github.com/aws-cloudformation/cfn-python-lint/)                                                                                                                                                      |
 | **Azure Resource Manager (ARM)** | [arm-ttk](https://github.com/azure/arm-ttk)                                                                                                                                                                             |
@@ -269,7 +275,7 @@ This means that if you run the linter "out of the box", all languages will be ch
 But if you wish to select or exclude specific linters, we give you full control to choose which linters are run, and won't run anything unexpected.
 
 | **ENV VAR**                           | **Default Value**               | **Notes**                                                                                                                                                                                                            |
-|---------------------------------------|---------------------------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| ------------------------------------- | ------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | **ACTIONS_RUNNER_DEBUG**              | `false`                         | Flag to enable additional information about the linter, versions, and additional output.                                                                                                                             |
 | **ANSIBLE_CONFIG_FILE**               | `.ansible-lint.yml`             | Filename for [Ansible-lint configuration](https://ansible-lint.readthedocs.io/en/latest/configuring.html#configuration-file) (ex: `.ansible-lint`, `.ansible-lint.yml`)                                              |
 | **ANSIBLE_DIRECTORY**                 | `/ansible`                      | Flag to set the root directory for Ansible file location(s), relative to `DEFAULT_WORKSPACE`. Set to `.` to use the top-level of the `DEFAULT_WORKSPACE`.                                                            |
@@ -281,12 +287,12 @@ But if you wish to select or exclude specific linters, we give you full control 
 | **DOCKERFILE_HADOLINT_FILE_NAME**     | `.hadolint.yaml`                | Filename for [hadolint configuration](https://github.com/hadolint/hadolint) (ex: `.hadolintlintrc.yaml`)                                                                                                             |
 | **EDITORCONFIG_FILE_NAME**            | `.ecrc`                         | Filename for [editorconfig-checker configuration](https://github.com/editorconfig-checker/editorconfig-checker)                                                                                                      |
 | **ERROR_ON_MISSING_EXEC_BIT**         | `false`                         | If set to `false`, the `bash-exec` linter will report a warning if a shell script is not executable. If set to `true`, the `bash-exec` linter will report an error instead.                                          |
-| **FILTER_REGEX_EXCLUDE**              | `none`                          | Regular expression defining which files will be excluded from linting  (ex: `.*src/test.*`)                                                                                                                          |
+| **FILTER_REGEX_EXCLUDE**              | `none`                          | Regular expression defining which files will be excluded from linting (ex: `.*src/test.*`)                                                                                                                           |
 | **FILTER_REGEX_INCLUDE**              | `all`                           | Regular expression defining which files will be processed by linters (ex: `.*src/.*`)                                                                                                                                |
 | **GITHUB_ACTIONS_CONFIG_FILE**        | `actionlint.yml`                | Filename for [Actionlint configuration](https://github.com/rhysd/actionlint/blob/main/docs/config.md) (ex: `actionlint.yml`)                                                                                         |
 | **GITHUB_CUSTOM_API_URL**             | `https://api.github.com`        | Specify a custom GitHub API URL in case GitHub Enterprise is used: e.g. `https://github.myenterprise.com/api/v3`                                                                                                     |
 | **GITHUB_DOMAIN**                     | `github.com`                    | Specify a custom GitHub domain in case GitHub Enterprise is used: e.g. `github.myenterprise.com`                                                                                                                     |
-| **GITLEAKS_CONFIG_FILE**              | `.gitleaks.toml`                | Filename for [GitLeaks configuration](https://github.com/zricethezav/gitleaks#configuration) (ex: `.gitleaks.toml`)                                                                                                 |
+| **GITLEAKS_CONFIG_FILE**              | `.gitleaks.toml`                | Filename for [GitLeaks configuration](https://github.com/zricethezav/gitleaks#configuration) (ex: `.gitleaks.toml`)                                                                                                  |
 | **IGNORE_GENERATED_FILES**            | `false`                         | If set to `true`, super-linter will ignore all the files with `@generated` marker but without `@not-generated` marker.                                                                                               |
 | **IGNORE_GITIGNORED_FILES**           | `false`                         | If set to `true`, super-linter will ignore all the files that are ignored by Git.                                                                                                                                    |
 | **JAVA_FILE_NAME**                    | `sun_checks.xml`                | Filename for [Checkstyle configuration](https://checkstyle.sourceforge.io/config.html) (ex: `checkstyle.xml`)                                                                                                        |
@@ -496,6 +502,7 @@ Examples:
 - Do not lint JavaScript files inside test folder: `FILTER_REGEX_EXCLUDE: .*test/.*.js`
 
 <!-- This `README.md` has both markers in the text, so it is considered not generated. -->
+
 Additionally when `IGNORE_GENERATED_FILES=true`, super-linter
 ignores any file with `@generated` marker in it unless the file
 also has `@not-generated` marker. `@generated` marker is
